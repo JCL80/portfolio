@@ -13,12 +13,14 @@ import { motion } from "framer-motion";
 
 import ModernSidebar from "@/components/ModernSidebar";
 import Header from "@/components/Header";
+import SmallerDevicesSideBar from "@/components/SmallerDevicesSideBar";
 
 export default function Home() {
   // const { showSideBar } = useContext(AppContext);
   const [showSideBar, setShowSideBar] = useState(true);
 
   const [activeSection, setActiveSection] = useState("home");
+  const [showSmallDevicesSideBar, setShowSmallDevicesSideBar] = useState(false);
 
   const homeRef = useRef(null);
   const aboutMeRef = useRef(null);
@@ -76,7 +78,11 @@ export default function Home() {
 
   return (
     <div>
-      <Header activeSection={activeSection} />
+      <Header
+        activeSection={activeSection}
+        setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
+      />
+      <SmallerDevicesSideBar />
       <div className="flex justify-end">
         <ModernSidebar
           showSideBar={showSideBar}
@@ -93,8 +99,10 @@ export default function Home() {
           {/* <p onClick={handleShowSideBar}>clickme </p> */}
           {/* <Navbar /> */}
           {/* <SideBar /> */}
+
           <div id="home" ref={homeRef}>
             <Main showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+            <p>{showSmallDevicesSideBar ? "true" : "false"}</p>
           </div>
           <div id="aboutme" ref={aboutMeRef}>
             <AboutMe />

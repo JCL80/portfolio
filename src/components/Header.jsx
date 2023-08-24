@@ -1,7 +1,7 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFileText } from "react-icons/bs";
 
-export default function Header({ activeSection }) {
+export default function Header({ activeSection, setShowSmallDevicesSideBar }) {
   const colocaNombreSeccion = () => {
     console.log("activeSection", activeSection);
     if (activeSection === "home") return "Main";
@@ -11,8 +11,12 @@ export default function Header({ activeSection }) {
     if (activeSection === "contact") return "Contact Me";
   };
 
+  const handleShowSmallDevicesSideBar = () => {
+    setShowSmallDevicesSideBar(true);
+  };
+
   return (
-    <div className=" fixed top-0 w-[100%] z-50 bg-[#ecf0f3]">
+    <div className=" fixed top-0 w-[100%] z-20 bg-[#ecf0f3]">
       <div className="flex justify-between items-center px-4 py-3">
         <div>
           <div className=" border-l-4 border-black">
@@ -28,7 +32,10 @@ export default function Header({ activeSection }) {
             <BsFileText size={25} />
           </div>
           <div className="border-2 border-black rounded-lg p-1">
-            <GiHamburgerMenu size={25} />
+            <GiHamburgerMenu
+              size={25}
+              onClick={handleShowSmallDevicesSideBar}
+            />
           </div>
         </div>
       </div>
