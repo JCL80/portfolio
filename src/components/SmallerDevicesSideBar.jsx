@@ -1,40 +1,116 @@
-export default function SmallerDevicesSideBar() {
+import { AiOutlineTwitter } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
+import { FiInstagram } from "react-icons/fi";
+import { BsStackOverflow } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFileText } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
+
+import Link from "next/link";
+
+export default function SmallerDevicesSideBar({
+  setShowSmallDevicesSideBar,
+  showSmallDevicesSideBar,
+}) {
+  const handleShowSideBar = () => {
+    setShowSmallDevicesSideBar(false);
+  };
+
+  const reactIconsSize = 24;
+
   return (
     <>
       <div
         //   id="drawer-navigation"
-        class="fixed top-0 left-0 z-40 h-screen w-64 p-4 overflow-y-auto transition-transform  bg-white dark:bg-gray-800"
+        class={`flex flex-col fixed top-0 left-0 z-40 h-[100svh]  w-[100vw]  overflow-y-auto transition-transform ${
+          showSmallDevicesSideBar ? null : "-translate-x-full"
+        } bg-white dark:bg-gray-800`}
         // tabindex="-1"
         // aria-labelledby="drawer-navigation-label"
       >
-        <h5
-          id="drawer-navigation-label"
-          class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
-        >
-          Menu
-        </h5>
-        <button
-          type="button"
-          data-drawer-hide="drawer-navigation"
-          aria-controls="drawer-navigation"
-          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-        >
-          <svg
-            aria-hidden="true"
-            class="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span class="sr-only">Close menu</span>
-        </button>
-        <div class="py-4 overflow-y-auto">
+        <div className="flex-grow ">
+          <div className="bg-red-50 flex flex-col h-full">
+            <div className="flex justify-end">
+              <button
+                onClick={handleShowSideBar}
+                type="button"
+                data-drawer-hide="drawer-navigation"
+                aria-controls="drawer-navigation"
+                class=" mr-7 mt-2 text-gray-600 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5  inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                <AiOutlineClose size={20} />
+                <span class="sr-only">Close menu</span>
+              </button>
+            </div>
+            <div className="flex mt-2 justify-center">
+              <div className="border border-black rounded-lg p-1 mr-2 flex">
+                <div className="mx-1">CV</div>
+                <BsFileText size={reactIconsSize} />
+              </div>
+              <div className="border border-black rounded-lg p-1 px-2 font-semibold">
+                ES
+              </div>
+            </div>
+            <div className="flex-grow flex flex-col justify-center items-center">
+              <p className="my-2">HOME</p>
+              <p className="my-2">ABOUT ME</p>
+              <p className="my-2">PORTFOLIO</p>
+              <p className="my-2">SKILLS</p>
+              <p className="my-2">CONTACT</p>
+              <p className="my-2">CONTRIBUTIONS</p>
+            </div>
+            <div className="mb-2">
+              <div className="flex justify-center mt-8">
+                {/* Your social media links */}
+                <div className="border rounded m-1 border-black flex w-fit p-2">
+                  <Link href={"https://twitter.com/JKL801"} target="blank">
+                    <AiOutlineTwitter size={reactIconsSize} />
+                  </Link>
+                </div>
+                <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                  <Link href={"https://github.com/JCL80"} target="blank">
+                    <AiFillGithub size={reactIconsSize} />
+                  </Link>
+                </div>
+                <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                  <Link
+                    href={
+                      "https://stackoverflow.com/users/20816738/jorge-cambra"
+                    }
+                    target="blank"
+                  >
+                    <BsStackOverflow size={reactIconsSize} />
+                  </Link>
+                </div>
+                <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                  <Link
+                    href={"https://www.instagram.com/jcl.80/"}
+                    target="blank"
+                  >
+                    <FiInstagram size={reactIconsSize} />
+                  </Link>
+                </div>
+                <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                  <Link
+                    href={"https://www.linkedin.com/in/jorge-cambra-5a4b30234/"}
+                    target="blank"
+                  >
+                    <AiFillLinkedin size={reactIconsSize} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+{
+  /* <div class="py-4 overflow-y-auto">
           <ul class="space-y-2 font-medium">
             <li>
               <a
@@ -171,8 +247,5 @@ export default function SmallerDevicesSideBar() {
               </a>
             </li>
           </ul>
-        </div>
-      </div>
-    </>
-  );
+        </div> */
 }

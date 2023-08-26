@@ -82,7 +82,10 @@ export default function Home() {
         activeSection={activeSection}
         setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
       />
-      <SmallerDevicesSideBar />
+      <SmallerDevicesSideBar
+        showSmallDevicesSideBar={showSmallDevicesSideBar}
+        setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
+      />
       <div className="flex justify-end">
         <ModernSidebar
           showSideBar={showSideBar}

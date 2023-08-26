@@ -1,7 +1,11 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFileText } from "react-icons/bs";
 
-export default function Header({ activeSection, setShowSmallDevicesSideBar }) {
+export default function Header({
+  activeSection,
+  setShowSmallDevicesSideBar,
+  showSmallDevicesSideBar,
+}) {
   const colocaNombreSeccion = () => {
     console.log("activeSection", activeSection);
     if (activeSection === "home") return "Main";
