@@ -16,8 +16,10 @@ export default function AboutMe() {
 
   return (
     <div>
-      <div className={`2xl:mx-52 xl:mx-20 mx-10 md:h-screen ${viewportColore}`}>
-        <div className="mt-56">
+      <div
+        className={`2xl:mx-52 xl:mx-20 mx-10 min-h-screen ${viewportColore}`}
+      >
+        <div className="mt-">
           <p className="text-6xl text-black font-22 text-center">About me</p>
           <div className=" flex justify-center">
             <div className="border-b border-8 border-black mt-4 w-[150px]" />
@@ -133,13 +135,46 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
+          <div className="mt-20 flex justify-center items-center">
+            <div className="w-[100%] md:w-[80%] xl:w-[60%]">
+              <div className="flex justify-center">
+                <div className=" w-fit border-black border-x">
+                  <p className="mx-4 text-xl border-b-2 border-yellow-300">
+                    EDUCATION
+                  </p>
+                </div>
+              </div>
+              <div className=" bg-slate-200 mt-6 py-8 px-6">
+                <p className="text-lg">
+                  <span className="font-semibold">IPVCE Máximo Gómez Báez</span>{" "}
+                  <span>(2017-2020)</span>
+                </p>
+                <p className="font-bold text-xl mt-1">
+                  Competitive Programming Contestant
+                </p>
+                <p className="mt-2">
+                  Contestant in the Ibero-American Olympiad in Informatics.
+                  Two-time silver medalist and one-time bronze medalist in the
+                  Cuban Olympiad in Informatics.
+                </p>
+              </div>
+              <div className=" bg-slate-200 mt-4 py-8 px-6">
+                <p className="text-lg">
+                  <span className="font-semibold">
+                    Central University Marta Abreu of Las Villas{" "}
+                  </span>
+                  <span>(2022)</span>
+                </p>
+                <p className="font-bold text-xl mt-1">Computer Science</p>
+                <p className="mt-2">
+                  Mostly interested in algorithms, web browsers, web
+                  experiences, combinatorics, and computational complexity.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-48 ml-60 border-b border-2 border-black"></div>
     </div>
   );
-}
-
-{
-  /*  */
 }

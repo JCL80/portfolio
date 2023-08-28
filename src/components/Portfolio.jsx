@@ -12,8 +12,10 @@ export default function Works() {
 
   return (
     <div>
-      <div className={`2xl:mx-52 xl:mx-20 mx-10 md:h-screen ${viewportColore}`}>
-        <div className="mt-56">
+      <div
+        className={`2xl:mx-52 xl:mx-20 mx-10 md:min-h-screen ${viewportColore}`}
+      >
+        <div className="mt">
           <p className="text-6xl text-black font-22 text-center">
             Where I've Worked
           </p>
@@ -24,26 +26,28 @@ export default function Works() {
         </div>
         <div>
           <div className="flex flex-col md:flex-row">
-            <div className=" border-black border-4 p-2">
-              <div className=" border-black border-4">
-                <Image src={MilesMorales} width={400} height={400} />
+            <div className="flex justify-center items-center">
+              <div className=" border-black border-4 p-2 inline-block">
+                <div className=" border-black border-4">
+                  <Image src={MilesMorales} width={400} height={400} />
+                </div>
               </div>
             </div>
             <div className="mt-10 md:mt-0 md:ml-6 md:w-[50%]">
               <p className=" text-2xl font-bold">Contapp Digital</p>
-              <div className="mt-2 flex">
-                <div className="bg-black flex items-center justify-center text-white rounded-lg px-2 py-1">
+              <div className="mt-1 flex flex-wrap">
+                <div className="bg-black mr-2 my-1 flex items-center justify-center text-white rounded-lg px-2 py-1">
                   <p>
-                    5-2022 <span>10-2022</span>
+                    5-2022 <span className="ms-2">10-2022</span>
                   </p>
                 </div>
-                <div className="rounded-lg border border-black px-2 py-1 ml-2 flex flex-col md:flex-row items-center">
+                <div className="rounded-lg border mr-2 my-1 border-black px-2 py-1 flex  items-center ">
                   <BsStackOverflow className=" mt-1 md:mt-0" />
                   <span className="ml-1 mt-1 md:mt-0 text-center">
                     Full Stack
                   </span>
                 </div>
-                <div className="rounded-lg border border-black px-2 py-1 ml-2 flex flex-col md:flex-row justify-center items-center">
+                <div className="rounded-lg border my-1 border-black px-2 py-1 flex justify-center items-center">
                   <LiaMicrochipSolid />
                   <span className="ml-1 mt-1 md:mt-0 text-center">
                     Microservices
@@ -77,22 +81,24 @@ export default function Works() {
         </div>
         <div className="mt-10">
           <div className="flex flex-col md:flex-row">
-            <div className=" border-black border-4 p-2">
-              <div className=" border-black border-4">
-                <Image src={MilesMorales} width={400} height={400} />
+            <div className="flex items-center justify-center">
+              <div className=" border-black border-4 p-2 inline-block">
+                <div className=" border-black border-4">
+                  <Image src={MilesMorales} width={400} height={400} />
+                </div>
               </div>
             </div>
             <div className="mt-10 md:mt-0 md:ml-6 md:w-[50%]">
               <p className=" text-2xl font-bold">Central Shop</p>
-              <div className="mt-2 flex">
-                <div className="bg-black text-white rounded-lg px-2 py-1">
-                  10-2022 present
+              <div className="mt-2 flex flex-wrap">
+                <div className="bg-black text-white rounded-lg px-2 py-1 mr-2 my-1">
+                  10-2022 <span className="ms-2">present</span>
                 </div>
-                <div className="rounded-lg border border-black px-2 py-1 ml-2 flex items-center">
+                <div className="rounded-lg border border-black px-2 py-1 mr-2 my-1 flex items-center">
                   <TbHtml />
                   <span className="ml-1">Frontend</span>
                 </div>
-                <div className="rounded-lg border border-black px-2 py-1 ml-2 flex items-center">
+                <div className="rounded-lg border border-black px-2 py-1 my-1 flex items-center">
                   <CiPen />
                   <span className="ml-1">UI/UX</span>
                 </div>
@@ -122,7 +128,6 @@ export default function Works() {
           </div>
         </div>
       </div>
-      <div className="mt-48 ml-60 border-b border-2 border-black"></div>
     </div>
   );
 }

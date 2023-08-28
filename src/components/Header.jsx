@@ -20,11 +20,11 @@ export default function Header({
   };
 
   return (
-    <div className=" fixed top-0 w-[100%] z-20 bg-[#ecf0f3]">
+    <div className=" fixed top-0 w-[100%] z-20 bg-[#ecf0f3]  xl:hidden ">
       <div className="flex justify-between items-center px-4 py-3">
         <div>
           <div className=" border-l-4 border-black">
-            <p className="text-4xl ms-2">
+            <p className="text-3xl md:text-4xl ms-2">
               {colocaNombreSeccion(activeSection)}
             </p>
           </div>
@@ -33,11 +33,11 @@ export default function Header({
         <div className="flex">
           <div className="border-2 border-black rounded-lg p-1 mr-2 flex">
             <div className="mx-1">CV</div>
-            <BsFileText size={25} />
+            <BsFileText size={22} />
           </div>
           <div className="border-2 border-black rounded-lg p-1">
             <GiHamburgerMenu
-              size={25}
+              size={22}
               onClick={handleShowSmallDevicesSideBar}
             />
           </div>

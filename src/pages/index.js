@@ -10,6 +10,7 @@ import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
 import Skills from "@/components/Skills";
 import { motion } from "framer-motion";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import ModernSidebar from "@/components/ModernSidebar";
 import Header from "@/components/Header";
@@ -18,7 +19,10 @@ import SmallerDevicesSideBar from "@/components/SmallerDevicesSideBar";
 export default function Home() {
   // const { showSideBar } = useContext(AppContext);
   const [showSideBar, setShowSideBar] = useState(true);
-
+  // const [
+  //   deviceIsTooSmallForInvasiveSideBar,
+  //   setDeviceIsTooSmallForInvasiveSideBar,
+  // ] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
   const [showSmallDevicesSideBar, setShowSmallDevicesSideBar] = useState(false);
 
@@ -83,6 +87,7 @@ export default function Home() {
         setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
       />
       <SmallerDevicesSideBar
+        activeSection={activeSection}
         showSmallDevicesSideBar={showSmallDevicesSideBar}
         setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
       />
@@ -103,20 +108,23 @@ export default function Home() {
           {/* <Navbar /> */}
           {/* <SideBar /> */}
 
-          <div id="home" ref={homeRef}>
+          <div id="home" ref={homeRef} className="mt-16 md:mt-0 ">
             <Main showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-            <p>{showSmallDevicesSideBar ? "true" : "false"}</p>
+            <div className=" ml-60 border-b border-2 border-black mt-20" />
           </div>
-          <div id="aboutme" ref={aboutMeRef}>
+          <div id="aboutme" ref={aboutMeRef} className=" pt-28">
             <AboutMe />
+            <div className=" ml-60 border-b border-2 border-black mt-28" />
           </div>
-          <div id="portfolio" ref={portfolioRef}>
+          <div id="portfolio" ref={portfolioRef} className=" pt-28">
             <Portfolio />
+            <div className=" ml-60 border-b border-2 border-black mt-28" />
           </div>
-          <div id="skills" ref={skillsRef}>
+          <div id="skills" ref={skillsRef} className="  pt-28">
             <Skills />
+            <div className=" ml-60 border-b border-2 border-black mt-28" />
           </div>
-          <div id="contact" ref={contactRef}>
+          <div id="contact" ref={contactRef} className="  pt-28">
             <Contact />
           </div>
           {/* <div className="h-screen bg-red-600 w-[60%]">adsafa</div> */}

@@ -59,7 +59,6 @@ function Main({ showSideBar, setShowSideBar }) {
           </div>
         </div>
       </div>
-      <div className=" ml-60 border-b border-2 border-black"></div>
     </div>
   );
 }

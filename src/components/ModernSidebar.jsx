@@ -4,6 +4,8 @@ import { FiInstagram } from "react-icons/fi";
 import { BsStackOverflow } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { BsFileText } from "react-icons/bs";
+
 import Link from "next/link";
 
 export default function ModernSidebar({
@@ -17,28 +19,26 @@ export default function ModernSidebar({
   const reactIconsSize = 20;
 
   return (
-    <div
-      className={`w-[20%] fixed top-0 left-0 h-screen hidden xl:block ${
-        showSideBar
-          ? "ease-in duration-100"
-          : "ease-in duration-100 left-[-50%]"
-      }`}
-    >
-      <div className="flex justify-end ">
-        <div
-          className=" bg-black p-2 border border-red-white shadow-xl"
-          onClick={handleShowSideBar}
-        >
-          <AiOutlineArrowLeft
-            size={20}
-            color="white"
-            className="cursor-pointer"
-          />
-        </div>
+    <div className="hidden xl:block ">
+      <div
+        className={`z-30 bg-black p-2 border border-red-white shadow-xl fixed top-0 left-100 ${
+          showSideBar ? "rotate-0" : "rotate-180"
+        }`}
+        onClick={handleShowSideBar}
+      >
+        <AiOutlineArrowLeft
+          size={20}
+          color="white"
+          className="cursor-pointer"
+        />
       </div>
-      <div className="border-r-4 border-black h-full mr-4 mt-3">
-        <div className="">
-          <div className="mx-0 bg-">
+      <div
+        className={`w-[20%] bg-[#ecf0f3] fixed top-0 left-0 z-20  h-[100vh] overflow-auto hidden xl:flex xl:flex-col xl:flex-grow  ${
+          showSideBar ? null : "-translate-x-full"
+        } transition-transform border-r-4 border-black `}
+      >
+        <div className="border-b-4 border-black pb-14">
+          <div className="mx-0 ">
             <div className="text-center  flex justify-center">
               <div className="mt-16">
                 <p className="text-5xl border-b-8 border-black pb-1 px-3 w-fit">
@@ -92,50 +92,61 @@ export default function ModernSidebar({
               </Link>
               <p className="px-2  py-4">CONTRIBUTIONS</p>
             </div>
-            <div className=" border-b-4 border-black mt-16"></div>
           </div>
         </div>
-        <div className="flex justify-center mt-8">
-          <div className="border border-black flex w-fit p-2">
-            <Link href={"https://twitter.com/JKL801"} target="blank">
-              <AiOutlineTwitter size={reactIconsSize} />
-            </Link>
+        <div className=" flex flex-grow items-center justify-center">
+          <div className=" flex flex-col ">
+            <div className="flex justify-center mt-8">
+              <div className="border rounded border-black flex justify-center items-center w-fit p-2">
+                CV
+                <BsFileText size={reactIconsSize} className="ms-1" />
+              </div>
+              <div className="border ms-2 rounded border-black flex justify-center items-center w-fit p-2">
+                ES
+              </div>
+            </div>
+            <div className="flex justify-center mt-8">
+              <div className="border border-black flex w-fit p-2">
+                <Link href={"https://twitter.com/JKL801"} target="blank">
+                  <AiOutlineTwitter size={reactIconsSize} />
+                </Link>
+              </div>
+              <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
+                <Link href={"https://github.com/JCL80"} target="blank">
+                  <AiFillGithub size={reactIconsSize} />
+                </Link>
+              </div>
+              <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
+                <Link
+                  href={"https://stackoverflow.com/users/20816738/jorge-cambra"}
+                  target="blank"
+                >
+                  <BsStackOverflow size={reactIconsSize} />
+                </Link>
+              </div>
+              <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
+                <Link href={"https://www.instagram.com/jcl.80/"} target="blank">
+                  <FiInstagram size={reactIconsSize} />
+                </Link>
+              </div>
+              <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
+                <Link
+                  href={"https://www.linkedin.com/in/jorge-cambra-5a4b30234/"}
+                  target="blank"
+                >
+                  <AiFillLinkedin size={reactIconsSize} />
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center mt-8 px-3">
+              <p
+                className="font-semibold text-lg text-center"
+                onClick={handleShowSideBar}
+              >
+                Developed by Jorge Cambra
+              </p>
+            </div>
           </div>
-          <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
-            <Link href={"https://github.com/JCL80"} target="blank">
-              <AiFillGithub size={reactIconsSize} />
-            </Link>
-          </div>
-          <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
-            <Link
-              href={"https://stackoverflow.com/users/20816738/jorge-cambra"}
-              target="blank"
-            >
-              <BsStackOverflow size={reactIconsSize} />
-            </Link>
-          </div>
-          <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
-            <Link href={"https://www.instagram.com/jcl.80/"} target="blank">
-              <FiInstagram size={reactIconsSize} />
-            </Link>
-          </div>
-          <div className="border border-black flex w-fit p-2 ms-1 2xl:ms-2">
-            <Link
-              href={"https://www.linkedin.com/in/jorge-cambra-5a4b30234/"}
-              target="blank"
-            >
-              <AiFillLinkedin size={reactIconsSize} />
-            </Link>
-          </div>
-        </div>
-        <div></div>
-        <div className="flex justify-center mt-8 px-3">
-          <p
-            className="font-semibold text-lg text-center"
-            onClick={handleShowSideBar}
-          >
-            Developed by Jorge Cambra
-          </p>
         </div>
       </div>
     </div>

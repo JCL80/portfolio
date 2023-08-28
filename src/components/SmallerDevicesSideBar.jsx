@@ -13,6 +13,7 @@ import Link from "next/link";
 export default function SmallerDevicesSideBar({
   setShowSmallDevicesSideBar,
   showSmallDevicesSideBar,
+  activeSection,
 }) {
   const handleShowSideBar = () => {
     setShowSmallDevicesSideBar(false);
@@ -23,82 +24,141 @@ export default function SmallerDevicesSideBar({
   return (
     <>
       <div
-        //   id="drawer-navigation"
-        class={`flex flex-col fixed top-0 left-0 z-40 h-[100svh]  w-[100vw]  overflow-y-auto transition-transform ${
+        className={`bg-red-50 fixed top-0 left-0 z-40 h-[100vh] w-[100vw] ${
           showSmallDevicesSideBar ? null : "-translate-x-full"
-        } bg-white dark:bg-gray-800`}
-        // tabindex="-1"
-        // aria-labelledby="drawer-navigation-label"
+        } overflow-y-auto transition-transform`}
       >
-        <div className="flex-grow ">
-          <div className="bg-red-50 flex flex-col h-full">
-            <div className="flex justify-end">
-              <button
-                onClick={handleShowSideBar}
-                type="button"
-                data-drawer-hide="drawer-navigation"
-                aria-controls="drawer-navigation"
-                class=" mr-7 mt-2 text-gray-600 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5  inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                <AiOutlineClose size={20} />
-                <span class="sr-only">Close menu</span>
-              </button>
-            </div>
-            <div className="flex mt-2 justify-center">
-              <div className="border border-black rounded-lg p-1 mr-2 flex">
-                <div className="mx-1">CV</div>
-                <BsFileText size={reactIconsSize} />
+        <div
+          //   id="drawer-navigation"
+          class={`flex flex-col fixed top-0 left-0 z-40 h-[100svh]  w-[100vw]   bg-white dark:bg-gray-800`}
+          // tabindex="-1"
+          // aria-labelledby="drawer-navigation-label"
+        >
+          <div className="flex-grow ">
+            <div className="bg-red-50 flex flex-col h-full">
+              <div className="flex justify-end">
+                <button
+                  onClick={handleShowSideBar}
+                  type="button"
+                  data-drawer-hide="drawer-navigation"
+                  aria-controls="drawer-navigation"
+                  class=" mr-7 mt-2 text-gray-600 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5  inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <AiOutlineClose size={20} />
+                  <span class="sr-only">Close menu</span>
+                </button>
               </div>
-              <div className="border border-black rounded-lg p-1 px-2 font-semibold">
-                ES
+              <div className="flex mt-2 justify-center">
+                <div className="border border-black rounded-lg p-1 mr-2 flex">
+                  <div className="mx-1">CV</div>
+                  <BsFileText size={reactIconsSize} />
+                </div>
+                <div className="border border-black rounded-lg p-1 px-2 font-semibold">
+                  ES
+                </div>
               </div>
-            </div>
-            <div className="flex-grow flex flex-col justify-center items-center">
-              <p className="my-2">HOME</p>
-              <p className="my-2">ABOUT ME</p>
-              <p className="my-2">PORTFOLIO</p>
-              <p className="my-2">SKILLS</p>
-              <p className="my-2">CONTACT</p>
-              <p className="my-2">CONTRIBUTIONS</p>
-            </div>
-            <div className="mb-2">
-              <div className="flex justify-center mt-8">
-                {/* Your social media links */}
-                <div className="border rounded m-1 border-black flex w-fit p-2">
-                  <Link href={"https://twitter.com/JKL801"} target="blank">
-                    <AiOutlineTwitter size={reactIconsSize} />
-                  </Link>
-                </div>
-                <div className="border rounded m-1 border-black flex w-fit p-2 ">
-                  <Link href={"https://github.com/JCL80"} target="blank">
-                    <AiFillGithub size={reactIconsSize} />
-                  </Link>
-                </div>
-                <div className="border rounded m-1 border-black flex w-fit p-2 ">
-                  <Link
-                    href={
-                      "https://stackoverflow.com/users/20816738/jorge-cambra"
-                    }
-                    target="blank"
+              <div className="flex-grow flex flex-col justify-center items-center">
+                <Link href="#home" scroll={false} onClick={handleShowSideBar}>
+                  <p
+                    className={`${
+                      activeSection === "home" ? "font-bold" : ""
+                    }  py-2`}
                   >
-                    <BsStackOverflow size={reactIconsSize} />
-                  </Link>
-                </div>
-                <div className="border rounded m-1 border-black flex w-fit p-2 ">
-                  <Link
-                    href={"https://www.instagram.com/jcl.80/"}
-                    target="blank"
+                    HOME
+                  </p>
+                </Link>
+                <Link
+                  href="#aboutme"
+                  scroll={false}
+                  onClick={handleShowSideBar}
+                >
+                  <p
+                    className={`${
+                      activeSection === "aboutme" ? "font-bold" : ""
+                    } px-10 py-2`}
                   >
-                    <FiInstagram size={reactIconsSize} />
-                  </Link>
-                </div>
-                <div className="border rounded m-1 border-black flex w-fit p-2 ">
-                  <Link
-                    href={"https://www.linkedin.com/in/jorge-cambra-5a4b30234/"}
-                    target="blank"
+                    ABOUT ME
+                  </p>
+                </Link>
+                <Link
+                  href="#portfolio"
+                  scroll={false}
+                  onClick={handleShowSideBar}
+                >
+                  <p
+                    className={`${
+                      activeSection === "portfolio" ? "font-bold" : ""
+                    } px-10 py-2`}
                   >
-                    <AiFillLinkedin size={reactIconsSize} />
-                  </Link>
+                    PORTFOLIO
+                  </p>
+                </Link>
+                <Link href="#skills" scroll={false} onClick={handleShowSideBar}>
+                  <p
+                    className={`${
+                      activeSection === "portfolio" ? "font-bold" : ""
+                    } px-10 py-2`}
+                  >
+                    SKILLS
+                  </p>
+                </Link>
+
+                <Link
+                  href="#contact"
+                  scroll={false}
+                  onClick={handleShowSideBar}
+                >
+                  <p
+                    className={`${
+                      activeSection === "contact" ? "font-bold" : ""
+                    } px-10 py-2`}
+                  >
+                    CONTACT
+                  </p>
+                </Link>
+
+                {/* <p className="my-2">CONTRIBUTIONS</p> */}
+              </div>
+              <div className="mb-2">
+                <div className="flex justify-center mt-8">
+                  <div className="border rounded m-1 border-black flex w-fit p-2">
+                    <Link href={"https://twitter.com/JKL801"} target="blank">
+                      <AiOutlineTwitter size={reactIconsSize} />
+                    </Link>
+                  </div>
+                  <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                    <Link href={"https://github.com/JCL80"} target="blank">
+                      <AiFillGithub size={reactIconsSize} />
+                    </Link>
+                  </div>
+                  <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                    <Link
+                      href={
+                        "https://stackoverflow.com/users/20816738/jorge-cambra"
+                      }
+                      target="blank"
+                    >
+                      <BsStackOverflow size={reactIconsSize} />
+                    </Link>
+                  </div>
+                  <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                    <Link
+                      href={"https://www.instagram.com/jcl.80/"}
+                      target="blank"
+                    >
+                      <FiInstagram size={reactIconsSize} />
+                    </Link>
+                  </div>
+                  <div className="border rounded m-1 border-black flex w-fit p-2 ">
+                    <Link
+                      href={
+                        "https://www.linkedin.com/in/jorge-cambra-5a4b30234/"
+                      }
+                      target="blank"
+                    >
+                      <AiFillLinkedin size={reactIconsSize} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

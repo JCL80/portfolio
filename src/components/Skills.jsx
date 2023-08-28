@@ -17,14 +17,47 @@ import GoogleAnalyticsLogo from "public/images/technologies/Google-Analytics-Log
 export default function Skills() {
   return (
     <div>
-      <div className="2xl:mx-52 xl:mx-20 mx-10 md:h-screen">
-        <div className="mt-56 ">
+      <div className="2xl:mx-52 xl:mx-20 mx-10 ">
+        <div className="mt ">
           <p className="text-6xl text-black font-22 text-center">Skills</p>
           <div className=" flex justify-center">
             <div className="border-b border-8 border-black mt-4 w-[150px]" />
           </div>
         </div>
-        <div className="mt-40 h-10 flex flex-wrap justify-center px-10">
+        <div className="mt-14">
+          <p>
+            I've used <span className="font-bold">React </span>and{" "}
+            <span className="font-bold">Next.js</span> to build fast and
+            efficient web applications, primarily relying on{" "}
+            <span className="font-bold">Bootstrap</span> or{" "}
+            <span className="font-bold">Tailwind</span> for responsive and
+            visually appealing designs.
+          </p>
+          <p className="mt-2">
+            On the backend, I've employed frameworks such as{" "}
+            <span className="font-bold">Nest.js</span> and{" "}
+            <span className="font-bold">Express.js</span> to develop robust and
+            scalable APIs. I've managed databases using{" "}
+            <span className="font-bold">MongoDB</span> , ensuring data integrity
+            and seamless querying. I've successfully deployed applications on
+            platforms like <span className="font-bold">DigitalOcean</span>,
+            configuring server instances and optimizing performance.
+          </p>
+          <p className="mt-2">
+            <span className="font-bold">Git</span> has been my tool for version
+            control, while <span className="font-bold">Docker</span> has enabled
+            consistent application deployment across various environments.
+          </p>
+          <p className="mt-2">
+            Additionally, I've explored{" "}
+            <span className="font-bold">Google Analytics</span> and{" "}
+            <span className="font-bold">Meta Pixel</span> integrations,
+            utilizing them to gain insights into user behavior and the
+            effectiveness of marketing campaigns.
+          </p>
+        </div>
+
+        <div className="mt-20 flex flex-wrap justify-center px-10 ">
           <div className="p-3 grayscale ">
             <Image src={NextJsLogo} className="h-10 w-auto" />
           </div>
@@ -70,9 +103,8 @@ export default function Skills() {
             <Image src={JSLogo} className="h-10 w-auto" />
           </div>
         </div>
-        <div className="mt-6 h-10 flex flex-wrap justify-center "></div>
       </div>
-      <div className="mt-48 ml-60 border-b border-2 border-black"></div>
+      {/* <div className="mt-48 ml-60 border-b border-2 border-black"></div> */}
     </div>
   );
 }
