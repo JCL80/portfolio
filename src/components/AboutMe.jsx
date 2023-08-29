@@ -25,7 +25,7 @@ export default function AboutMe() {
             <div className="border-b border-8 border-black mt-4 w-[150px]" />
           </div>
           <div className="flex justify-center">
-            <p className="mt-8 w-[100%] md:w-[80%] xl:w-[60%] text-center">
+            <p className="mt-8 w-[100%] md:w-[80%] xl:w-[70%] text-center">
               I am a web developer with 2+ years of experience. I am from
               Camagüey, Cuba. I started programming at the age of 15 as part of
               the Cuban competitive programming movement. I currently live in
@@ -35,7 +35,7 @@ export default function AboutMe() {
               related.
             </p>
           </div>
-          <div className="mt-14  text-lg">
+          <div className="mt-20  text-lg">
             <div className="flex justify-center">
               <div
                 ref={ref}
@@ -139,12 +139,12 @@ export default function AboutMe() {
             <div className="w-[100%] md:w-[80%] xl:w-[60%]">
               <div className="flex justify-center">
                 <div className=" w-fit border-black border-x">
-                  <p className="mx-4 text-xl border-b-2 border-yellow-300">
+                  <p className="mx-4 font-semibold text-2xl border-b-2 border-yellow-300">
                     EDUCATION
                   </p>
                 </div>
               </div>
-              <div className=" bg-slate-200 mt-6 py-8 px-6">
+              <div className=" shadow-lg bg- mt-6 py-8 px-6">
                 <p className="text-lg">
                   <span className="font-semibold">IPVCE Máximo Gómez Báez</span>{" "}
                   <span>(2017-2020)</span>
@@ -158,7 +158,7 @@ export default function AboutMe() {
                   Cuban Olympiad in Informatics.
                 </p>
               </div>
-              <div className=" bg-slate-200 mt-4 py-8 px-6">
+              <div className=" shadow-lg mt-4 py-8 px-6">
                 <p className="text-lg">
                   <span className="font-semibold">
                     Central University Marta Abreu of Las Villas{" "}

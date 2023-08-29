@@ -15,10 +15,8 @@ function Main({ showSideBar, setShowSideBar }) {
   return (
     <div>
       <div className={`2xl:mx-52 xl:mx-20 mx-10 md:h-screen ${viewportColore}`}>
-        {/* <p className="text-6xl text-black font-22 text-center">About me</p> */}
-        <div className=" w-full h-full p-2 flex flex-col md:flex-row flex-1 items-center">
+        <div className=" w-full h-full p-2 flex flex-col md:flex-row flex-1 items-center justify-center">
           <div className="w-[100%] px-0 md:px-8 md:w-[80%] xl:w-[60%] mt-10 order-2 md:order-1 ">
-            {/* {showSideBar ? "show" : "dont show"} */}
             <p className="text-5xl text-black font-22">Website</p>
             <p className="text-5xl text-black">Developer</p>
             <div className=" border-b border-black border-8 mt-6 w-[200px]" />
