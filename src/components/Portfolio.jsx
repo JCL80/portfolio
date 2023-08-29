@@ -26,7 +26,7 @@ export default function Works() {
         </div>
         <div className=" flex ">
           <div className="flex flex-col lg:flex-row justify-center ">
-            <div className="flex justify-center lg:justify-end items-center lg:w-[45%] ">
+            <div className="flex justify-center items-center ">
               <div className=" border-black border-4 p-2 inline-block">
                 <div className=" border-black border-4">
                   <Image src={MilesMorales} width={400} height={400} />
@@ -34,48 +34,46 @@ export default function Works() {
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:ml-6 lg:w-[50%] ">
-              <div className="xl:w-[80%]">
-                <p className=" text-2xl font-bold">Contapp Digital</p>
-                <div className="mt-1 flex flex-wrap">
-                  <div className="bg-black mr-2 my-1 flex items-center justify-center text-white rounded-lg px-2 py-1">
-                    <p>
-                      5-2022 <span className="ms-2">10-2022</span>
-                    </p>
-                  </div>
-                  <div className="rounded-lg border mr-2 my-1 border-black px-2 py-1 flex  items-center ">
-                    <BsStackOverflow className=" mt-1 md:mt-0" />
-                    <span className="ml-1 mt-1 md:mt-0 text-center">
-                      Full Stack
-                    </span>
-                  </div>
-                  <div className="rounded-lg border my-1 border-black px-2 py-1 flex justify-center items-center">
-                    <LiaMicrochipSolid />
-                    <span className="ml-1 mt-1 md:mt-0 text-center">
-                      Microservices
-                    </span>
-                  </div>
+              <p className=" text-2xl font-bold">Contapp Digital</p>
+              <div className="mt-1 flex flex-wrap">
+                <div className="bg-black mr-2 my-1 flex items-center justify-center text-white rounded-lg px-2 py-1">
+                  <p>
+                    5-2022 <span className="ms-2">10-2022</span>
+                  </p>
                 </div>
-                <p className="mt-2">
-                  Developed and maintained responsive and user-friendly user
-                  interfaces for enterprise web applications using React, Next
-                  JS, HTML, CSS, and JavaScript. Implemented mobile-first and
-                  responsive design principles to ensure optimal user
-                  experiences across devices. Designed and implemented RESTful
-                  APIs to support frontend applications, facilitating seamless
-                  data exchange and smooth user experiences.
-                </p>
-                <div className="mt-4 flex ">
-                  <div>
-                    <li>React JS</li>
-                    <li>Next JS</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind</li>
-                  </div>
-                  <div className="ms-10">
-                    <li>Atomic Design</li>
-                    <li>Nest JS</li>
-                    <li>Express JS</li>
-                  </div>
+                <div className="rounded-lg border mr-2 my-1 border-black px-2 py-1 flex  items-center ">
+                  <BsStackOverflow className=" mt-1 md:mt-0" />
+                  <span className="ml-1 mt-1 md:mt-0 text-center">
+                    Full Stack
+                  </span>
+                </div>
+                <div className="rounded-lg border my-1 border-black px-2 py-1 flex justify-center items-center">
+                  <LiaMicrochipSolid />
+                  <span className="ml-1 mt-1 md:mt-0 text-center">
+                    Microservices
+                  </span>
+                </div>
+              </div>
+              <p className="mt-2">
+                Developed and maintained responsive and user-friendly user
+                interfaces for enterprise web applications using React, Next JS,
+                HTML, CSS, and JavaScript. Implemented mobile-first and
+                responsive design principles to ensure optimal user experiences
+                across devices. Designed and implemented RESTful APIs to support
+                frontend applications, facilitating seamless data exchange and
+                smooth user experiences.
+              </p>
+              <div className="mt-4 flex ">
+                <div>
+                  <li>React JS</li>
+                  <li>Next JS</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind</li>
+                </div>
+                <div className="ms-10">
+                  <li>Atomic Design</li>
+                  <li>Nest JS</li>
+                  <li>Express JS</li>
                 </div>
               </div>
             </div>
