@@ -55,6 +55,7 @@
   transition: filter 0.3s ease; /* Adding transition for smooth effect */
 }
 
+
 .grayscale-image:hover {
   filter: none; /* Removing the grayscale filter on hover */
 }

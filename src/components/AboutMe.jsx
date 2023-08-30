@@ -122,10 +122,15 @@ export default function AboutMe() {
               </div>
             </div>
             <div className="my-10 flex justify-center items-">
-              <div className="bg-yellow-300 px-20 py-10 flex flex-col items-center justify-center">
-                <AiOutlineCloudDownload size={60} />
-                <p className=" text-xl font-bold mt-3">DOWNLOAD CV</p>
-              </div>
+              <a
+                href="/Jorge_Cambra_Resume.pdf"
+                download="Jorge_Cambra_Resume.pdf"
+              >
+                <div className="bg-yellow-300 px-20 py-10 flex flex-col items-center justify-center">
+                  <AiOutlineCloudDownload size={60} />
+                  <p className=" text-xl font-bold mt-3">DOWNLOAD CV</p>
+                </div>
+              </a>
             </div>
             <div className=" ">
               <div className="flex items-start justify-center">

@@ -17,6 +17,7 @@ export default function Header({
 
   const handleShowSmallDevicesSideBar = () => {
     setShowSmallDevicesSideBar(true);
+    document.body.style.overflow = "hidden";
   };
 
   return (
@@ -31,15 +32,18 @@ export default function Header({
         </div>
         <div></div>
         <div className="flex">
-          <div className="border-2 border-black rounded-lg p-1 mr-2 flex">
-            <div className="mx-1">CV</div>
-            <BsFileText size={22} />
-          </div>
-          <div className="border-2 border-black rounded-lg p-1">
-            <GiHamburgerMenu
-              size={22}
-              onClick={handleShowSmallDevicesSideBar}
-            />
+          <a href="/Jorge_Cambra_Resume.pdf" download="Jorge_Cambra_Resume.pdf">
+            <div className="border-2 border-black rounded-lg p-1 mr-2 flex">
+              <div className="mx-1">CV</div>
+
+              <BsFileText size={22} />
+            </div>
+          </a>
+          <div
+            className="border-2 border-black rounded-lg p-1 cursor-pointer"
+            onClick={handleShowSmallDevicesSideBar}
+          >
+            <GiHamburgerMenu size={22} />
           </div>
         </div>
       </div>

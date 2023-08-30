@@ -74,13 +74,15 @@ export default function ModernSidebar({
                   PORTFOLIO
                 </p>
               </Link>
-              <p
-                className={`${
-                  activeSection === "skills" ? "bg-yellow-300" : ""
-                } px-10 py-4`}
-              >
-                SKILLS
-              </p>
+              <Link href="#skills" scroll={false}>
+                <p
+                  className={`${
+                    activeSection === "skills" ? "bg-yellow-300" : ""
+                  } px-10 py-4`}
+                >
+                  SKILLS
+                </p>
+              </Link>
               <Link href="#contact" scroll={false}>
                 <p
                   className={`${
@@ -90,17 +92,22 @@ export default function ModernSidebar({
                   CONTACT
                 </p>
               </Link>
-              <p className="px-2  py-4">CONTRIBUTIONS</p>
+              {/* <p className="px-2  py-4">CONTRIBUTIONS</p> */}
             </div>
           </div>
         </div>
         <div className=" flex flex-grow items-center justify-center">
           <div className=" flex flex-col ">
             <div className="flex justify-center mt-8">
-              <div className="border rounded border-black flex justify-center items-center w-fit p-2">
-                CV
-                <BsFileText size={reactIconsSize} className="ms-1" />
-              </div>
+              <a
+                href="/Jorge_Cambra_Resume.pdf"
+                download="Jorge_Cambra_Resume.pdf"
+              >
+                <div className="border rounded border-black flex justify-center items-center w-fit p-2">
+                  CV
+                  <BsFileText size={reactIconsSize} className="ms-1" />
+                </div>
+              </a>
               <div className="border ms-2 rounded border-black flex justify-center items-center w-fit p-2">
                 ES
               </div>

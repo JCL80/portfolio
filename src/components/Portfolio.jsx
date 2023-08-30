@@ -29,7 +29,12 @@ export default function Works() {
             <div className="flex justify-center items-center ">
               <div className=" border-black border-4 p-2 inline-block">
                 <div className=" border-black border-4">
-                  <Image src={MilesMorales} width={400} height={400} />
+                  <Image
+                    alt="Contapp Digital Website"
+                    src={MilesMorales}
+                    width={400}
+                    height={400}
+                  />
                 </div>
               </div>
             </div>
@@ -84,7 +89,12 @@ export default function Works() {
             <div className="flex items-center justify-center">
               <div className=" border-black border-4 p-2 inline-block">
                 <div className=" border-black border-4">
-                  <Image src={MilesMorales} width={400} height={400} />
+                  <Image
+                    alt="Central Shop Website"
+                    src={MilesMorales}
+                    width={400}
+                    height={400}
+                  />
                 </div>
               </div>
             </div>

@@ -33,30 +33,35 @@ export default function Skills() {
             <div className="mt-20 flex flex-wrap justify-center px-10 ">
               <div className="p-3">
                 <Image
+                  alt="NextJsLogo"
                   src={NextJsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="BootstrapLogo"
                   src={BootstrapLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="HtmlLogo"
                   src={HtmlLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="CssLogo"
                   src={CssLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="StrapiLogo"
                   src={StrapiLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
@@ -64,36 +69,42 @@ export default function Skills() {
 
               <div className="p-3">
                 <Image
+                  alt="GitLogo"
                   src={GitLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="NestJsLogo"
                   src={NestJsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="ReactLogo"
                   src={ReactLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="TailwindLogo"
                   src={TailwindLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="ExpressLogo"
                   src={ExpressLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="DockerLogo"
                   src={DockerLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
@@ -101,18 +112,21 @@ export default function Skills() {
 
               <div className="p-3">
                 <Image
+                  alt="GoogleAnalyticsLogo"
                   src={GoogleAnalyticsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="TypescriptLogo"
                   src={TypescriptLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />
               </div>
               <div className="p-3">
                 <Image
+                  alt="JSLogo"
                   src={JSLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
                 />

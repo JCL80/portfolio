@@ -17,12 +17,8 @@ import Header from "@/components/Header";
 import SmallerDevicesSideBar from "@/components/SmallerDevicesSideBar";
 
 export default function Home() {
-  // const { showSideBar } = useContext(AppContext);
   const [showSideBar, setShowSideBar] = useState(true);
-  // const [
-  //   deviceIsTooSmallForInvasiveSideBar,
-  //   setDeviceIsTooSmallForInvasiveSideBar,
-  // ] = useState(true);
+
   const [activeSection, setActiveSection] = useState("home");
   const [showSmallDevicesSideBar, setShowSmallDevicesSideBar] = useState(false);
 
@@ -36,48 +32,32 @@ export default function Home() {
     setShowSideBar(!showSideBar);
   };
 
+  const handleScroll = () => {
+    const homeTop = homeRef.current.getBoundingClientRect().top;
+    const homeBottom = homeRef.current.getBoundingClientRect().bottom;
+    const aboutMeTop = aboutMeRef.current.getBoundingClientRect().top;
+    const aboutMeBottom = aboutMeRef.current.getBoundingClientRect().bottom;
+    const portfolioTop = portfolioRef.current.getBoundingClientRect().top;
+    const portfolioBottom = portfolioRef.current.getBoundingClientRect().bottom;
+    const skillsTop = skillsRef.current.getBoundingClientRect().top;
+    const skillsBottom = skillsRef.current.getBoundingClientRect().bottom;
+    const contactTop = contactRef.current.getBoundingClientRect().top;
+    const contactBottom = contactRef.current.getBoundingClientRect().bottom;
+
+    console.log("aboutMeTop", aboutMeTop);
+
+    if (homeTop <= 1 && homeBottom) setActiveSection("home");
+    if (aboutMeTop <= 1 && aboutMeBottom) setActiveSection("aboutme");
+    if (portfolioTop <= 1 && portfolioBottom) setActiveSection("portfolio");
+    if (skillsTop <= 1 && skillsBottom) setActiveSection("skills");
+    if (contactTop <= 1 && contactBottom) setActiveSection("contact");
+  };
+
   useEffect(() => {
-    const observerOptions = {
-      root: null, // use the viewport as the root
-      threshold: 0.5, // fire the callback when 50% of the section is visible
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Set the active section based on the entry's target ref
-          switch (entry.target) {
-            case homeRef.current:
-              setActiveSection("home");
-              break;
-            case aboutMeRef.current:
-              setActiveSection("aboutme");
-              break;
-            case portfolioRef.current:
-              setActiveSection("portfolio");
-              break;
-            case skillsRef.current:
-              setActiveSection("skills");
-              break;
-            case contactRef.current:
-              setActiveSection("contact");
-              break;
-            default:
-              setActiveSection("home");
-          }
-        }
-      });
-    }, observerOptions);
-
-    // Observe the section refs
-    observer.observe(homeRef.current);
-    observer.observe(aboutMeRef.current);
-    observer.observe(portfolioRef.current);
-    observer.observe(skillsRef.current);
-    observer.observe(contactRef.current);
-
-    // Cleanup the observer when component unmounts
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -104,17 +84,13 @@ export default function Home() {
               : "w-[100%] ease-in duration-200"
           }`}
         >
-          {/* <p onClick={handleShowSideBar}>clickme </p> */}
-          {/* <Navbar /> */}
-          {/* <SideBar /> */}
-
-          <div id="home" ref={homeRef} className="mt-16 md:mt-0 ">
+          <div id="home" ref={homeRef} className="pt-16 md:pt-0 ">
             <Main showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-            <div className=" ml-60 border-b border-2 border-black mt-20" />
+            <div className=" ml-60 border-b border-2 border-black mt-20 " />
           </div>
-          <div id="aboutme" ref={aboutMeRef} className=" pt-28">
+          <div id="aboutme" ref={aboutMeRef} className=" pt-28 ">
             <AboutMe />
-            <div className=" ml-60 border-b border-2 border-black mt-28" />
+            <div className=" ml-60 border-b border-2 border-black mt-28 " />
           </div>
           <div id="portfolio" ref={portfolioRef} className=" pt-28">
             <Portfolio />
@@ -127,7 +103,6 @@ export default function Home() {
           <div id="contact" ref={contactRef} className="  pt-28">
             <Contact />
           </div>
-          {/* <div className="h-screen bg-red-600 w-[60%]">adsafa</div> */}
         </div>
       </div>
     </div>

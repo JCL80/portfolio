@@ -51,7 +51,13 @@ function Main({ showSideBar, setShowSideBar }) {
           <div className="order-1 md:order-2">
             <div className=" border-black border-4 p-2 mt-10 md:mt-0">
               <div className=" border-black border-4">
-                <Image src={tmpAvatar} width={400} height={400} />
+                <Image
+                  priority
+                  alt="JCL80_Avatar"
+                  src={tmpAvatar}
+                  width={400}
+                  height={400}
+                />
               </div>
             </div>
           </div>
