@@ -1,18 +1,18 @@
 import Image from "next/image";
-import BootstrapLogo from "public/images/technologies/Bootstrap_logo.svg.png";
-import StrapiLogo from "public/images/technologies/pngwing.com.png";
-import HtmlLogo from "public/images/technologies/HTML5_logo_and_wordmark.svg.png";
-import CssLogo from "public/images/technologies/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png";
-import JSLogo from "public/images/technologies/JavaScript-logo.png";
-import GitLogo from "public/images/technologies/git_logo.png";
-import NestJsLogo from "public/images/technologies/nestjs_logo.png";
-import NextJsLogo from "public/images/technologies/Nextjs-logo.svg.png";
-import ReactLogo from "public/images/technologies/react_logo.png";
-import ExpressLogo from "public/images/technologies/Expressjs.png";
-import DockerLogo from "public/images/technologies/docker_logo.png";
-import TailwindLogo from "public/images/technologies/tailwindcss-logotype.svg";
-import TypescriptLogo from "public/images/technologies/Typescript_logo_2020.svg.png";
-import GoogleAnalyticsLogo from "public/images/technologies/Google-Analytics-Logo.png";
+import BootstrapLogo from "public/images/workedImages/Bootstrap_logo.svg.png";
+import StrapiLogo from "public/images/workedImages/pngwing.com.png";
+import HtmlLogo from "public/images/workedImages/HTML5_logo_and_wordmark.svg.png";
+import CssLogo from "public/images/workedImages/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png";
+import JSLogo from "public/images/workedImages/JavaScript-logo.png";
+import GitLogo from "public/images/workedImages/git_logo.png";
+import NestJsLogo from "public/images/workedImages/nestjs_logo.png";
+import NextJsLogo from "public/images/workedImages/Nextjs-logo.svg.png";
+import ReactLogo from "public/images/workedImages/react_logo.png";
+import ExpressLogo from "public/images/workedImages/Expressjs.png";
+import DockerLogo from "public/images/workedImages/docker_logo.png";
+import TailwindLogo from "public/images/workedImages/tailwindcss-logotype.svg";
+import TypescriptLogo from "public/images/workedImages/Typescript_logo_2020.svg.png";
+import GoogleAnalyticsLogo from "public/images/workedImages/Google-Analytics-Logo.png";
 
 export default function Skills() {
   const viewportColorer =
@@ -33,6 +33,7 @@ export default function Skills() {
             <div className="mt-20 flex flex-wrap justify-center px-10 ">
               <div className="p-3">
                 <Image
+                  priority
                   alt="NextJsLogo"
                   src={NextJsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -40,6 +41,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="BootstrapLogo"
                   src={BootstrapLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -47,6 +49,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="HtmlLogo"
                   src={HtmlLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -54,6 +57,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="CssLogo"
                   src={CssLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -61,6 +65,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="StrapiLogo"
                   src={StrapiLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -69,6 +74,7 @@ export default function Skills() {
 
               <div className="p-3">
                 <Image
+                  priority
                   alt="GitLogo"
                   src={GitLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -76,6 +82,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="NestJsLogo"
                   src={NestJsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -83,6 +90,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="ReactLogo"
                   src={ReactLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -90,6 +98,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="TailwindLogo"
                   src={TailwindLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -97,6 +106,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="ExpressLogo"
                   src={ExpressLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -104,6 +114,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="DockerLogo"
                   src={DockerLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -112,6 +123,7 @@ export default function Skills() {
 
               <div className="p-3">
                 <Image
+                  priority
                   alt="GoogleAnalyticsLogo"
                   src={GoogleAnalyticsLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -119,6 +131,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="TypescriptLogo"
                   src={TypescriptLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"
@@ -126,6 +139,7 @@ export default function Skills() {
               </div>
               <div className="p-3">
                 <Image
+                  priority
                   alt="JSLogo"
                   src={JSLogo}
                   className="h-10 w-auto lg:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer"

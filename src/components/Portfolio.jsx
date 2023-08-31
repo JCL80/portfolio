@@ -4,6 +4,9 @@ import { TbHtml } from "react-icons/tb";
 import { CiPen } from "react-icons/ci";
 import { LiaMicrochipSolid } from "react-icons/lia";
 import { BsStackOverflow } from "react-icons/bs";
+import ContappDigital from "public/contapp.jpg";
+import CentralShop from "public/centralshop.jpg";
+import Link from "next/link";
 
 export default function Works() {
   const viewportColorer =
@@ -29,12 +32,14 @@ export default function Works() {
             <div className="flex justify-center items-center ">
               <div className=" border-black border-4 p-2 inline-block">
                 <div className=" border-black border-4">
-                  <Image
-                    alt="Contapp Digital Website"
-                    src={MilesMorales}
-                    width={400}
-                    height={400}
-                  />
+                  <Link href={"https://contappdigital.com"} target="blank">
+                    <Image
+                      alt="Contapp Digital Website"
+                      src={ContappDigital}
+                      width={400}
+                      height={400}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -89,12 +94,14 @@ export default function Works() {
             <div className="flex items-center justify-center">
               <div className=" border-black border-4 p-2 inline-block">
                 <div className=" border-black border-4">
-                  <Image
-                    alt="Central Shop Website"
-                    src={MilesMorales}
-                    width={400}
-                    height={400}
-                  />
+                  <Link href={"https://centralshop.com.py"} target="blank">
+                    <Image
+                      alt="Central Shop Website"
+                      src={CentralShop}
+                      width={400}
+                      height={400}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
