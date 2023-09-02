@@ -8,10 +8,27 @@ import ContappDigital from "public/contapp.jpg";
 import CentralShop from "public/centralshop.jpg";
 import Link from "next/link";
 
-export default function Works() {
+export default function Works({ locale }) {
   const viewportColorer =
     "bg-red-500 sm:bg-slate-400 md:bg-blue-500 lg:bg-yellow-300 xl:bg-purple-300 2xl:bg-orange-500";
   const viewportColore = "";
+
+  const language = locale === "en-US" ? 0 : 1;
+
+  const text = [
+    {
+      firstP:
+        "Developed and maintained responsive and user-friendly user interfaces for enterprise web applications using React, Next JS, HTML, CSS, and JavaScript. Implemented mobile-first and responsive design principles to ensure optimal user experiences across devices. Designed and implemented RESTful APIs to support frontend applications, facilitating seamless data exchange and smooth user experiences.",
+      secondP:
+        "Worked with backend developers to integrate frontend components with ecommerce platforms and databases. Integrated payment gateways and checkout processes to facilitate secure and smooth online transactions. Conducted performance optimization to improve page loading times and enhance overall website responsiveness. Ensured web accessibility compliance to make the ecommerce platform accessible to all users.",
+    },
+    {
+      firstP:
+        "Desarrollo y mantenimiento de interfaces de usuario responsivas y amigables para aplicaciones web empresariales utilizando React, Next JS, HTML, CSS y JavaScript. Implementación de principios de diseño mobile-first y responsivos para garantizar experiencias de usuario óptimas en todos los dispositivos. Diseño e implementación de APIs RESTful para respaldar las aplicaciones frontend, facilitando el intercambio de datos y experiencias de usuario fluidas.",
+      secondP:
+        "Trabajé en colaboración con desarrolladores backend para integrar componentes frontend con plataformas de comercio electrónico y bases de datos. Integré pasarelas y procesos de pago para facilitar transacciones en línea seguras. Realicé optimizaciones de rendimiento para mejorar tiempos de carga y aumentar la capacidad de respuesta general del sitio web. Garanticé el cumplimiento de la accesibilidad web para hacer que la plataforma de comercio electrónico fuera accesible para todos los usuarios.",
+    },
+  ];
 
   return (
     <div>
@@ -64,15 +81,7 @@ export default function Works() {
                   </span>
                 </div>
               </div>
-              <p className="mt-2">
-                Developed and maintained responsive and user-friendly user
-                interfaces for enterprise web applications using React, Next JS,
-                HTML, CSS, and JavaScript. Implemented mobile-first and
-                responsive design principles to ensure optimal user experiences
-                across devices. Designed and implemented RESTful APIs to support
-                frontend applications, facilitating seamless data exchange and
-                smooth user experiences.
-              </p>
+              <p className="mt-2">{text[language].firstP}</p>
               <div className="mt-4 flex ">
                 <div>
                   <li>React JS</li>
@@ -120,15 +129,7 @@ export default function Works() {
                   <span className="ml-1">UI/UX</span>
                 </div>
               </div>
-              <p className="mt-2">
-                Worked with backend developers to integrate frontend components
-                with ecommerce platforms and databases. Integrated payment
-                gateways and checkout processes to facilitate secure and smooth
-                online transactions. Conducted performance optimization to
-                improve page loading times and enhance overall website
-                responsiveness. Ensured web accessibility compliance to make the
-                ecommerce platform accessible to all users.
-              </p>
+              <p className="mt-2">{text[language].secondP}</p>
               <div className="mt-4 flex ">
                 <div>
                   <li>React JS</li>
@@ -138,7 +139,6 @@ export default function Works() {
                 <div className="ms-10">
                   <li>Atomic Design</li>
                   <li>Google Analytics</li>
-                  <li>Atomic Design</li>
                 </div>
               </div>
             </div>

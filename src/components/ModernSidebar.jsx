@@ -12,11 +12,39 @@ export default function ModernSidebar({
   showSideBar,
   setShowSideBar,
   activeSection,
+  locale,
 }) {
   const handleShowSideBar = () => {
     setShowSideBar(!showSideBar);
   };
   const reactIconsSize = 20;
+
+  const language = locale === "en-US" ? 0 : 1;
+  const reversedLocale = locale === "en-US" ? "es-ES" : "en-US";
+  const changeLenguageText = locale === "en-US" ? "ES" : "EN";
+  const resumeName =
+    locale === "en-US"
+      ? "Jorge_Cambra_Resume.pdf"
+      : "Jorge_Cambra_Curriculum.pdf";
+
+  const text = [
+    {
+      home: "HOME",
+      aboutme: "ABOUT ME",
+      portfolio: "EXPERIENCE",
+      skills: "SKILLS",
+      contact: "CONTACT",
+      developer: "Developed by Jorge Cambra",
+    },
+    {
+      home: "INICIO",
+      aboutme: "SOBRE MI",
+      portfolio: "EXPERIENCIA",
+      skills: "HABILIDADES",
+      contact: "CONTACTO",
+      developer: "Desarrollado por Jorge Cambra",
+    },
+  ];
 
   return (
     <div className="hidden xl:block ">
@@ -53,7 +81,7 @@ export default function ModernSidebar({
                     activeSection === "home" ? "bg-yellow-300" : ""
                   }  py-3`}
                 >
-                  HOME
+                  {text[language].home}
                 </p>
               </Link>
               <Link href="#aboutme" scroll={false}>
@@ -62,7 +90,7 @@ export default function ModernSidebar({
                     activeSection === "aboutme" ? "bg-yellow-300" : ""
                   } px-10 py-4`}
                 >
-                  ABOUT ME
+                  {text[language].aboutme}
                 </p>
               </Link>
               <Link href="#portfolio" scroll={false}>
@@ -71,7 +99,7 @@ export default function ModernSidebar({
                     activeSection === "portfolio" ? "bg-yellow-300" : ""
                   } px-10 py-4`}
                 >
-                  PORTFOLIO
+                  {text[language].portfolio}
                 </p>
               </Link>
               <Link href="#skills" scroll={false}>
@@ -80,7 +108,7 @@ export default function ModernSidebar({
                     activeSection === "skills" ? "bg-yellow-300" : ""
                   } px-10 py-4`}
                 >
-                  SKILLS
+                  {text[language].skills}
                 </p>
               </Link>
               <Link href="#contact" scroll={false}>
@@ -89,7 +117,7 @@ export default function ModernSidebar({
                     activeSection === "contact" ? "bg-yellow-300" : ""
                   } px-10 py-4`}
                 >
-                  CONTACT
+                  {text[language].contact}
                 </p>
               </Link>
               {/* <p className="px-2  py-4">CONTRIBUTIONS</p> */}
@@ -99,17 +127,16 @@ export default function ModernSidebar({
         <div className=" flex flex-grow items-center justify-center">
           <div className=" flex flex-col ">
             <div className="flex justify-center mt-8">
-              <a
-                href="/Jorge_Cambra_Resume.pdf"
-                download="Jorge_Cambra_Resume.pdf"
-              >
+              <a href={`/${resumeName}`} download={resumeName}>
                 <div className="border rounded border-black flex justify-center items-center w-fit p-2">
                   CV
                   <BsFileText size={reactIconsSize} className="ms-1" />
                 </div>
               </a>
               <div className="border ms-2 rounded border-black flex justify-center items-center w-fit p-2">
-                ES
+                <Link href={"/"} locale={reversedLocale}>
+                  {changeLenguageText}
+                </Link>
               </div>
             </div>
             <div className="flex justify-center mt-8">
@@ -150,7 +177,7 @@ export default function ModernSidebar({
                 className="font-semibold text-lg text-center"
                 onClick={handleShowSideBar}
               >
-                Developed by Jorge Cambra
+                {text[language].developer}
               </p>
             </div>
           </div>
