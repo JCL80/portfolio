@@ -32,7 +32,7 @@ function Main({ showSideBar, setShowSideBar, locale }) {
       firstP:
         "Soy un programador con una fuerte motivación por aprender y crecer continuamente. Mi experiencia principal radica en el lenguaje JavaScript y sus tecnologías relacionadas.",
       secondP:
-        "Realmente disfruto construir, sin importar el tema o complejidad del proyecto. Me siento feliz al saber que he hecho una diferencia para alguien de alguna manera.",
+        "Realmente disfruto construir, sin importar el tema o complejidad del proyecto. Se siente bien saber que he hecho una diferencia para alguien de alguna manera.",
       thirdP:
         "Soy un firme creyente en el potencial de las tecnologías web, principalmente en los navegadores web volviéndose más potentes, y el acceso a internet aún más generalizado.",
     },
@@ -41,29 +41,31 @@ function Main({ showSideBar, setShowSideBar, locale }) {
   return (
     <div>
       <div className={`2xl:mx-52 xl:mx-20 mx-10 md:h-screen ${viewportColore}`}>
-        <div className=" w-full h-full p-2 flex flex-col md:flex-row flex-1 items-center justify-center">
-          <div className="w-[100%] px-0 md:px-8 md:w-[80%] xl:w-[60%] mt-10 order-2 md:order-1 ">
+        <div className=" w-full h-full p-2 flex flex-col lg:flex-row flex-1 items-center justify-center">
+          <div className="w-[100%] px-0 lg:px-8 md:w-[80%] xl:w-[60%] mt-10 order-2 lg:order-1 ">
             <p className="text-5xl text-black font-22">
               {text[language].encabezado1}
             </p>
             <p className="text-5xl text-black">{text[language].encabezado2}</p>
             <div className=" border-b border-black border-8 mt-6 w-[200px]" />
             <div className="mt-6">
-              <p className="text-xl">
+              <p className="">
                 {text[language].zeroP}{" "}
-                <span className={`${kalam.className}`}>Jorge Cambra</span>.
+                <span className={`${kalam.className} text-lg `}>
+                  Jorge Cambra
+                </span>
+                .
               </p>
 
               <p className="mt-2">{text[language].firstP}</p>
               <p className="mt-2">{text[language].secondP}</p>
               <p className="mt-2">{text[language].thirdP}</p>
-              {/* <Image className="mt-2" src={signature_1} /> */}
             </div>
             <div className="mt-6 text-3xl font-semibold">
               <p className={`${kalam.className} font-bold`}>JCL80</p>
             </div>
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-1 lg:order-2">
             <div className=" border-black border-4 p-2 mt-10 md:mt-0">
               <div className=" border-black border-4">
                 <Image

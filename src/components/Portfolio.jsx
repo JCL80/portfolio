@@ -1,5 +1,4 @@
 import Image from "next/image";
-import MilesMorales from "public/images/wallpapersden.com_spider-man-miles-morales-black-and-red-suit_600x600.jpg";
 import { TbHtml } from "react-icons/tb";
 import { CiPen } from "react-icons/ci";
 import { LiaMicrochipSolid } from "react-icons/lia";
@@ -17,12 +16,14 @@ export default function Works({ locale }) {
 
   const text = [
     {
+      header: "Where I've Worked",
       firstP:
         "Developed and maintained responsive and user-friendly user interfaces for enterprise web applications using React, Next JS, HTML, CSS, and JavaScript. Implemented mobile-first and responsive design principles to ensure optimal user experiences across devices. Designed and implemented RESTful APIs to support frontend applications, facilitating seamless data exchange and smooth user experiences.",
       secondP:
         "Worked with backend developers to integrate frontend components with ecommerce platforms and databases. Integrated payment gateways and checkout processes to facilitate secure and smooth online transactions. Conducted performance optimization to improve page loading times and enhance overall website responsiveness. Ensured web accessibility compliance to make the ecommerce platform accessible to all users.",
     },
     {
+      header: "Experiencia",
       firstP:
         "Desarrollo y mantenimiento de interfaces de usuario responsivas y amigables para aplicaciones web empresariales utilizando React, Next JS, HTML, CSS y JavaScript. Implementación de principios de diseño mobile-first y responsivos para garantizar experiencias de usuario óptimas en todos los dispositivos. Diseño e implementación de APIs RESTful para respaldar las aplicaciones frontend, facilitando el intercambio de datos y experiencias de usuario fluidas.",
       secondP:
@@ -37,7 +38,7 @@ export default function Works({ locale }) {
       >
         <div className="mt">
           <p className="text-6xl text-black font-22 text-center">
-            Where I've Worked
+            {text[language].header}
           </p>
           <div className=" flex justify-center">
             <div className="border-b border-8 border-black mt-4 w-[300px]" />
@@ -60,39 +61,41 @@ export default function Works({ locale }) {
                 </div>
               </div>
             </div>
-            <div className="mt-10 lg:mt-0 lg:ml-6 lg:w-[50%] ">
-              <p className=" text-2xl font-bold">Contapp Digital</p>
-              <div className="mt-1 flex flex-wrap">
-                <div className="bg-black mr-2 my-1 flex items-center justify-center text-white rounded-lg px-2 py-1">
-                  <p>
-                    5-2022 <span className="ms-2">10-2022</span>
-                  </p>
+            <div className="mt-10 lg:mt-0 lg:ml-6 lg:w-[50%] flex flex-col  items-center">
+              <div className="w-[100%] md:w-[80%] lg:w-[100%]">
+                <p className=" text-2xl font-bold">Contapp Digital</p>
+                <div className="mt-1 flex flex-wrap">
+                  <div className="bg-black mr-2 my-1 flex items-center justify-center text-white rounded-lg px-2 py-1">
+                    <p>
+                      5-2022 <span className="ms-2">10-2022</span>
+                    </p>
+                  </div>
+                  <div className="rounded-lg border mr-2 my-1 border-black px-2 py-1 flex  items-center ">
+                    <BsStackOverflow className=" mt-1 md:mt-0" />
+                    <span className="ml-1 mt-1 md:mt-0 text-center">
+                      Full Stack
+                    </span>
+                  </div>
+                  <div className="rounded-lg border my-1 border-black px-2 py-1 flex justify-center items-center">
+                    <LiaMicrochipSolid />
+                    <span className="ml-1 mt-1 md:mt-0 text-center">
+                      Microservices
+                    </span>
+                  </div>
                 </div>
-                <div className="rounded-lg border mr-2 my-1 border-black px-2 py-1 flex  items-center ">
-                  <BsStackOverflow className=" mt-1 md:mt-0" />
-                  <span className="ml-1 mt-1 md:mt-0 text-center">
-                    Full Stack
-                  </span>
-                </div>
-                <div className="rounded-lg border my-1 border-black px-2 py-1 flex justify-center items-center">
-                  <LiaMicrochipSolid />
-                  <span className="ml-1 mt-1 md:mt-0 text-center">
-                    Microservices
-                  </span>
-                </div>
-              </div>
-              <p className="mt-2">{text[language].firstP}</p>
-              <div className="mt-4 flex ">
-                <div>
-                  <li>React JS</li>
-                  <li>Next JS</li>
-                  <li>TypeScript</li>
-                  <li>Tailwind</li>
-                </div>
-                <div className="ms-10">
-                  <li>Atomic Design</li>
-                  <li>Nest JS</li>
-                  <li>Express JS</li>
+                <p className="mt-2">{text[language].firstP}</p>
+                <div className="mt-4 flex ">
+                  <div>
+                    <li>React JS</li>
+                    <li>Next JS</li>
+                    <li>TypeScript</li>
+                    <li>Tailwind</li>
+                  </div>
+                  <div className="ms-10">
+                    <li>Atomic Design</li>
+                    <li>Nest JS</li>
+                    <li>Express JS</li>
+                  </div>
                 </div>
               </div>
             </div>
@@ -114,31 +117,33 @@ export default function Works({ locale }) {
                 </div>
               </div>
             </div>
-            <div className="mt-10 lg:mt-0 lg:ml-6 lg:w-[50%]">
-              <p className=" text-2xl font-bold">Central Shop</p>
-              <div className="mt-2 flex flex-wrap">
-                <div className="bg-black text-white rounded-lg px-2 py-1 mr-2 my-1">
-                  10-2022 <span className="ms-2">present</span>
+            <div className="mt-10 lg:mt-0 lg:ml-6 lg:w-[50%] flex flex-col  items-center">
+              <div className="w-[100%] md:w-[80%] lg:w-[100%]">
+                <p className=" text-2xl font-bold">Central Shop</p>
+                <div className="mt-2 flex flex-wrap">
+                  <div className="bg-black text-white rounded-lg px-2 py-1 mr-2 my-1">
+                    10-2022 <span className="ms-2">present</span>
+                  </div>
+                  <div className="rounded-lg border border-black px-2 py-1 mr-2 my-1 flex items-center">
+                    <TbHtml />
+                    <span className="ml-1">Frontend</span>
+                  </div>
+                  <div className="rounded-lg border border-black px-2 py-1 my-1 flex items-center">
+                    <CiPen />
+                    <span className="ml-1">UI/UX</span>
+                  </div>
                 </div>
-                <div className="rounded-lg border border-black px-2 py-1 mr-2 my-1 flex items-center">
-                  <TbHtml />
-                  <span className="ml-1">Frontend</span>
-                </div>
-                <div className="rounded-lg border border-black px-2 py-1 my-1 flex items-center">
-                  <CiPen />
-                  <span className="ml-1">UI/UX</span>
-                </div>
-              </div>
-              <p className="mt-2">{text[language].secondP}</p>
-              <div className="mt-4 flex ">
-                <div>
-                  <li>React JS</li>
-                  <li>Next JS</li>
-                  <li>Bootstrap</li>
-                </div>
-                <div className="ms-10">
-                  <li>Atomic Design</li>
-                  <li>Google Analytics</li>
+                <p className="mt-2">{text[language].secondP}</p>
+                <div className="mt-4 flex ">
+                  <div>
+                    <li>React JS</li>
+                    <li>Next JS</li>
+                    <li>Bootstrap</li>
+                  </div>
+                  <div className="ms-10">
+                    <li>Atomic Design</li>
+                    <li>Google Analytics</li>
+                  </div>
                 </div>
               </div>
             </div>

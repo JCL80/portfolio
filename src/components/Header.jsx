@@ -33,7 +33,6 @@ export default function Header({
   ];
 
   const colocaNombreSeccion = () => {
-    console.log("activeSection", activeSection);
     if (activeSection === "home") return text[language].home;
     if (activeSection === "aboutme") return text[language].aboutme;
     if (activeSection === "portfolio") return text[language].portfolio;

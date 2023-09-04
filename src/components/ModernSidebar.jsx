@@ -7,6 +7,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BsFileText } from "react-icons/bs";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function ModernSidebar({
   showSideBar,
@@ -14,9 +15,9 @@ export default function ModernSidebar({
   activeSection,
   locale,
 }) {
-  const handleShowSideBar = () => {
-    setShowSideBar(!showSideBar);
-  };
+  const router = useRouter();
+  const { pathname, asPath, query } = router;
+
   const reactIconsSize = 20;
 
   const language = locale === "en-US" ? 0 : 1;
@@ -45,6 +46,14 @@ export default function ModernSidebar({
       developer: "Desarrollado por Jorge Cambra",
     },
   ];
+
+  const handleShowSideBar = () => {
+    setShowSideBar(!showSideBar);
+  };
+
+  const handleChangeLanguage = () => {
+    router.push({ pathname, query }, asPath, { locale: reversedLocale });
+  };
 
   return (
     <div className="hidden xl:block ">
@@ -133,11 +142,14 @@ export default function ModernSidebar({
                   <BsFileText size={reactIconsSize} className="ms-1" />
                 </div>
               </a>
-              <div className="border ms-2 rounded border-black flex justify-center items-center w-fit p-2">
-                <Link href={"/"} locale={reversedLocale}>
+              <Link href={"/"} locale={reversedLocale}>
+                <div
+                  className="cursor-pointer border ms-2 rounded border-black flex justify-center items-center w-fit p-2"
+                  // onClick={handleChangeLanguage}
+                >
                   {changeLenguageText}
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
             <div className="flex justify-center mt-8">
               <div className="border border-black flex w-fit p-2">
