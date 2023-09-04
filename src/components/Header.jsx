@@ -5,14 +5,39 @@ export default function Header({
   activeSection,
   setShowSmallDevicesSideBar,
   showSmallDevicesSideBar,
+  locale,
 }) {
+  const language = locale === "en-US" ? 0 : 1;
+  const resumeName =
+    locale === "en-US"
+      ? "Jorge_Cambra_Resume.pdf"
+      : "Jorge_Cambra_Curriculum.pdf";
+
+  const text = [
+    {
+      home: "HOME",
+      aboutme: "ABOUT ME",
+      portfolio: "EXPERIENCE",
+      skills: "SKILLS",
+      contact: "CONTACT",
+      developer: "Developed by Jorge Cambra",
+    },
+    {
+      home: "INICIO",
+      aboutme: "SOBRE MI",
+      portfolio: "EXPERIENCIA",
+      skills: "HABILIDADES",
+      contact: "CONTACTO",
+      developer: "Desarrollado por Jorge Cambra",
+    },
+  ];
+
   const colocaNombreSeccion = () => {
-    console.log("activeSection", activeSection);
-    if (activeSection === "home") return "Main";
-    if (activeSection === "aboutme") return "About Me";
-    if (activeSection === "portfolio") return "Portfolio";
-    if (activeSection === "skills") return "Skills";
-    if (activeSection === "contact") return "Contact Me";
+    if (activeSection === "home") return text[language].home;
+    if (activeSection === "aboutme") return text[language].aboutme;
+    if (activeSection === "portfolio") return text[language].portfolio;
+    if (activeSection === "skills") return text[language].skills;
+    if (activeSection === "contact") return text[language].contact;
   };
 
   const handleShowSmallDevicesSideBar = () => {
@@ -32,7 +57,7 @@ export default function Header({
         </div>
         <div></div>
         <div className="flex">
-          <a href="/Jorge_Cambra_Resume.pdf" download="Jorge_Cambra_Resume.pdf">
+          <a href={`/${resumeName}`} download={resumeName}>
             <div className="border-2 border-black rounded-lg p-1 mr-2 flex">
               <div className="mx-1">CV</div>
 

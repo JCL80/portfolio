@@ -16,7 +16,8 @@ import ModernSidebar from "@/components/ModernSidebar";
 import Header from "@/components/Header";
 import SmallerDevicesSideBar from "@/components/SmallerDevicesSideBar";
 
-export default function Home() {
+export default function Home({ context }) {
+  const { locale } = context;
   const [showSideBar, setShowSideBar] = useState(true);
 
   const [activeSection, setActiveSection] = useState("home");
@@ -44,8 +45,6 @@ export default function Home() {
     const contactTop = contactRef.current.getBoundingClientRect().top;
     const contactBottom = contactRef.current.getBoundingClientRect().bottom;
 
-    console.log("aboutMeTop", aboutMeTop);
-
     if (homeTop <= 1 && homeBottom) setActiveSection("home");
     if (aboutMeTop <= 1 && aboutMeBottom) setActiveSection("aboutme");
     if (portfolioTop <= 1 && portfolioBottom) setActiveSection("portfolio");
@@ -61,50 +60,70 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <Header
-        activeSection={activeSection}
-        setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
-      />
-      <SmallerDevicesSideBar
-        activeSection={activeSection}
-        showSmallDevicesSideBar={showSmallDevicesSideBar}
-        setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
-      />
-      <div className="flex justify-end">
-        <ModernSidebar
-          showSideBar={showSideBar}
-          setShowSideBar={setShowSideBar}
+    <>
+      <Head>
+        <title>Jorge Cambra </title>
+      </Head>
+      <div>
+        <Header
           activeSection={activeSection}
+          setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
+          locale={locale}
         />
-        <div
-          className={`${
-            showSideBar
-              ? "w-[100%] xl:w-[80%] ease-in duration-200"
-              : "w-[100%] ease-in duration-200"
-          }`}
-        >
-          <div id="home" ref={homeRef} className="pt-16 md:pt-0 ">
-            <Main showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-            <div className=" ml-60 border-b border-2 border-black mt-20 " />
-          </div>
-          <div id="aboutme" ref={aboutMeRef} className=" pt-28 ">
-            <AboutMe />
-            <div className=" ml-60 border-b border-2 border-black mt-28 " />
-          </div>
-          <div id="portfolio" ref={portfolioRef} className=" pt-28">
-            <Portfolio />
-            <div className=" ml-60 border-b border-2 border-black mt-28" />
-          </div>
-          <div id="skills" ref={skillsRef} className="  pt-28">
-            <Skills />
-            <div className=" ml-60 border-b border-2 border-black mt-28" />
-          </div>
-          <div id="contact" ref={contactRef} className="  pt-28">
-            <Contact />
+        <SmallerDevicesSideBar
+          activeSection={activeSection}
+          showSmallDevicesSideBar={showSmallDevicesSideBar}
+          setShowSmallDevicesSideBar={setShowSmallDevicesSideBar}
+          locale={locale}
+        />
+        <div className="flex justify-end">
+          <ModernSidebar
+            showSideBar={showSideBar}
+            setShowSideBar={setShowSideBar}
+            activeSection={activeSection}
+            locale={locale}
+          />
+          <div
+            className={`${
+              showSideBar
+                ? "w-[100%] xl:w-[80%] ease-in duration-200"
+                : "w-[100%] ease-in duration-200"
+            }`}
+          >
+            <div id="home" ref={homeRef} className="pt-16 md:pt-32 lg:pt-0 ">
+              <Main
+                showSideBar={showSideBar}
+                setShowSideBar={setShowSideBar}
+                locale={locale}
+              />
+              <div className=" ml-60 border-b border-2 border-black mt-20 " />
+            </div>
+            <div id="aboutme" ref={aboutMeRef} className=" pt-28 ">
+              <AboutMe locale={locale} />
+              <div className=" ml-60 border-b border-2 border-black mt-28 " />
+            </div>
+            <div id="portfolio" ref={portfolioRef} className=" pt-28">
+              <Portfolio locale={locale} />
+              <div className=" ml-60 border-b border-2 border-black mt-28" />
+            </div>
+            <div id="skills" ref={skillsRef} className="  pt-28">
+              <Skills locale={locale} />
+              <div className=" ml-60 border-b border-2 border-black mt-28" />
+            </div>
+            <div id="contact" ref={contactRef} className="  pt-28">
+              <Contact locale={locale} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      context,
+    },
+  };
 }
